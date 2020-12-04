@@ -2,7 +2,7 @@ const path = require('path');
 const dir = __dirname
 
 module.exports = {
-  entry: path.resolve(dir, '../src/index.js'),
+  entry: path.resolve(dir, '../src/index.ts'),
   module: {
     rules: [
       {
