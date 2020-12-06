@@ -1,9 +1,6 @@
 {
-  "compilerOptions": {
-    "outDir": "./dist/",
-    "noImplicitAny": true,
-    "module": "es6",
+  "compilerOptions":　{
     "target": "es5",
-    "allowJs": true
+    "module": "commonjs"
   }
 }
