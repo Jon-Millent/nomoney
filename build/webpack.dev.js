@@ -1,10 +1,10 @@
 const path = require('path');
 const dir = __dirname
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const webpack = require('webpack')
 
 module.exports = {
   entry: path.resolve(dir, '../src/index.ts'),
-  mode: 'production',
+  mode: 'development',
   module: {
     rules: [
       {
@@ -15,16 +15,23 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: [ '.ts' ],
+    extensions: [".wasm", ".ts", ".tsx", ".mjs", ".cjs", ".js", ".json"],
   },
   output: {
     filename: 'bundle.js',
-    path: path.resolve(dir, '../dist'),
+    path: path.resolve(dir, '../test'),
     libraryTarget: 'umd',
     library: 'nomoney',
     libraryExport: 'default'
   },
   plugins: [
-    new CleanWebpackPlugin(),
-  ]
+    new webpack.HotModuleReplacementPlugin(),
+  ],
+  devServer: {
+    contentBase: path.resolve(dir, "../test"),
+    historyApiFallback: true,
+    compress: true,
+    hot: true,
+    port: 8080,
+  }
 };

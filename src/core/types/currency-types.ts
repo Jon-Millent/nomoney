@@ -20,6 +20,9 @@ interface CNNumber {
     zero: string;
     full: string;
     and: string;
+    yuan: string;
+    jiao: string;
+    fen: string;
 }
 
 // currencyBuild options 类型
@@ -28,8 +31,15 @@ interface currencyBuildOptions {
     group: CurrencyUnitGroup
 }
 
+interface currencyParseGroup {
+    intArea: string[],
+    doubleArea: string
+}
+
+
 export {
     CurrencyUnitGroup,
     CNNumber,
     currencyBuildOptions,
+    currencyParseGroup
 }

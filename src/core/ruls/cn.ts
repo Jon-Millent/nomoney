@@ -15,6 +15,9 @@ export default new currencyBuild (
             zero: '零',
             full: '整',
             and: '零',
+            yuan: '元',
+            jiao: '角',
+            fen: '分'
         },
         group: {
             unit: [
@@ -22,10 +25,10 @@ export default new currencyBuild (
                 '京','垓','杼','穰','沟',
                 '涧','正','载','极',
                 '恒河沙','阿僧祇','那由他',
-                '不可思议','无量','大数',
+                '不可思议','无量','大数'
             ],
             base: [
-                '十', '百', '千'
+                '拾', '佰', '仟'
             ]
         }
     }
