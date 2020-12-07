@@ -24,12 +24,12 @@ class Currency {
         if(parseLine.doubleArea) {
             let doubleBack = StringHelp.formatSun(parseLine.doubleArea)
             if(doubleBack) {
-                return betterMoon + cnCurrency.num.yuan + StringHelp.formatSun(parseLine.doubleArea)
+                return (betterMoon ? betterMoon + cnCurrency.num.yuan : '') + StringHelp.formatSun(parseLine.doubleArea)
             } else{
-                return betterMoon + cnCurrency.num.yuan + cnCurrency.num.full
+                return (betterMoon ? betterMoon + cnCurrency.num.yuan : '') + cnCurrency.num.full
             }
         } else {
-            return betterMoon + cnCurrency.num.yuan + cnCurrency.num.full
+            return betterMoon ? (betterMoon + cnCurrency.num.yuan + cnCurrency.num.full) : ''
         }
     }
 
