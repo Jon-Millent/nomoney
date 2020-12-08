@@ -3,13 +3,13 @@ const dir = __dirname
 const webpack = require('webpack')
 
 module.exports = {
-  entry: path.resolve(dir, '../src/index.ts'),
+  entry: path.resolve(dir, '../dev/index.ts'),
   mode: 'development',
   module: {
     rules: [
       {
         test: /\.ts$/,
-        use: 'ts-loader',
+        use: ['babel-loader'],
         exclude: /node_modules/,
       },
     ],

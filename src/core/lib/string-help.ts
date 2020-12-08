@@ -1,10 +1,10 @@
 import { currencyParseGroup } from '../types/currency-types'
-import cn from '../ruls/cn'
+import currencyBuild from "../tools/currencyBuild";
 
 class StringHelp {
     // 货币分组
     public static splitMoney(currency : string | number) : currencyParseGroup {
-        let split : string[] = currency.toString().split('.')
+        let split : string[] = StringHelp.getBeautifulString(currency.toString()).split('.')
 
         // 分割
         let intAreaStr : string[] = []
@@ -34,7 +34,7 @@ class StringHelp {
     }
 
     // 对分组的整形货币进行格式化
-    public static formatMoon(currency : string[]) : string {
+    public static formatMoon(currency : string[], cn: currencyBuild) : string {
 
         let moon : string = ''
 
@@ -44,7 +44,7 @@ class StringHelp {
 
             let currencyUnitIndex = currency.length - currencyIndex - 1 // unit 等级
             let hasAppendUnit : boolean = false // 是否补上单位
-            let targetAppendUnit : string = null // 补单位
+            let targetAppendUnit : string = '' // 补单位
 
             for(let moneyIndex=0; moneyIndex<currencyItem.length; moneyIndex++) {
                 let moneyLeave = currencyItem.length - moneyIndex - 1
@@ -55,6 +55,8 @@ class StringHelp {
                 let bigValue = cn.getBigNumber(moneyNowItem)
 
                 let isZero : boolean = moneyNowItem === '0'
+
+                let isLast : boolean = moneyIndex === currencyItem.length - 1
 
                 if(!targetAppendUnit) {
                     targetAppendUnit = unit.unit
@@ -98,9 +100,9 @@ class StringHelp {
                 }
 
                 // 最后一位补单位
-                if( moneyIndex === currencyItem.length - 1 ) {
+                if( isLast ) {
                     nextAppendZero = isZero
-                    if(!hasAppendUnit && targetAppendUnit) {
+                    if(!hasAppendUnit && targetAppendUnit && currencyItem !== '0000') {
                         moon += targetAppendUnit
                     }
                 }
@@ -112,7 +114,7 @@ class StringHelp {
     }
 
     // 对小数型格式化
-    public static formatSun(currency: string) : string {
+    public static formatSun(currency: string, intCurrency: string, cn: currencyBuild) : string {
         currency = currency.substr(0, 2)
         if(currency === '00' || currency === '0') {
             return  ''
@@ -120,7 +122,7 @@ class StringHelp {
 
         if(currency.length === 2) {
             if(currency[0] === '0') {
-                return cn.num.zero + cn.getBigNumber(currency[1]) + cn.getDoubleIndex('1')
+                return (intCurrency ? cn.num.zero : '') + cn.getBigNumber(currency[1]) + cn.getDoubleIndex('1')
             } else {
                 return cn.getBigNumber(currency[0]) + cn.getDoubleIndex('0') + cn.getBigNumber(currency[1]) + cn.getDoubleIndex('1')
             }
@@ -131,6 +133,16 @@ class StringHelp {
         }
 
         return ''
+    }
+
+    // 处理一下字符串
+    public static getBeautifulString(currency: string) : string {
+        return currency.replace(/^0+/, '')
+    }
+
+    // 判断是否是 0 字符串
+    public static getIsZeroString(currency: string) : boolean {
+        return /^0+\.*0*$/.test(currency)
     }
 }
 

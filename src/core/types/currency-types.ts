@@ -36,10 +36,23 @@ interface currencyParseGroup {
     doubleArea: string
 }
 
+enum Language {
+    zh_cn,
+    tw_cn,
+    hk_cn
+}
+
+interface currencyBaseConfig {
+    lang?: Language
+}
+
+interface currencyStringifyConfig extends currencyBaseConfig{}
 
 export {
     CurrencyUnitGroup,
     CNNumber,
     currencyBuildOptions,
-    currencyParseGroup
+    currencyParseGroup,
+    Language,
+    currencyStringifyConfig
 }
