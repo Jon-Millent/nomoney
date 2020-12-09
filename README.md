@@ -1,7 +1,46 @@
-# nomoney
-人民币数字大写格式化，大写转数字。
+<h1 align="center">
+  nomoney
+<h1>
+<p align="center">
+  人民币数字大写格式化。
+<p>
+<p align="center">
+  <img src="https://i.loli.net/2020/12/09/CDIE85aWFTzsX3O.png">  
+<p>
 
-## 构思规律
+## Install
+```shell
+yarn add xxx
+```
+or
+```shell
+npm install xxx
+```
+
+## 使用
+
+### import
+```javascript
+import xxx form xxx
+
+xxx.stringify('123456')
+```
+### for browser
+```html
+<script src="xxx"></script>
+```
+```javascript
+import xxx form xxx
+
+xxx.stringify('123456')
+```
+
+## Api
+
+## 单位
+
+## 注意事项
+
 
 ```text
 壹	贰	叁	肆	伍	陆	柒	捌
