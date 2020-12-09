@@ -1,12 +1,12 @@
 <h1 align="center">
   nomoney
-<h1>
+</h1>
 <p align="center">
   人民币数字大写格式化。
-<p>
+</p>
 <p align="center">
   <img src="https://i.loli.net/2020/12/09/CDIE85aWFTzsX3O.png">  
-<p>
+</p>
 
 ## Install
 ```shell
