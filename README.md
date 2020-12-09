@@ -5,7 +5,7 @@
   人民币数字大写格式化
 </p>
 <p align="center">
-  <img src="https://i.loli.net/2020/12/09/hvx6PezJfqQD3RZ.png">  
+  <img src="https://i.loli.net/2020/12/09/uQfwjWkgKEJaNXr.png">  
 </p>
 
 ## Install
