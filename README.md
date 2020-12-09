@@ -2,7 +2,7 @@
   nomoney
 </h1>
 <p align="center">
-  人民币数字大写格式化。
+  人民币数字大写格式化
 </p>
 <p align="center">
   <img src="https://i.loli.net/2020/12/09/CDIE85aWFTzsX3O.png">  
