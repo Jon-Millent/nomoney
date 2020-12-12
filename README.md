@@ -27,7 +27,7 @@ nomoney.stringify('123456')
 ### for browser
 ```html
 
-<script src="https://cdn.jsdelivr.net/npm/nomoney@1.0.0/dist/nomoney.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/nomoney@1.0.2/dist/nomoney.min.js"></script>
 ```
 ```javascript
 nomoney.stringify('123456')
