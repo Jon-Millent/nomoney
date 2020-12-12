@@ -2,7 +2,7 @@
   nomoney
 </h1>
 <p align="center">
-  人民币数字大写格式化
+  人民币大写格式化，数字大写格式化，支持简体、繁体。最大支持`10^72`
 </p>
 <p align="center">
   <img src="https://i.loli.net/2020/12/09/uQfwjWkgKEJaNXr.png">  
@@ -10,50 +10,113 @@
 
 ## Install
 ```shell
-yarn add xxx
+yarn add nomoney
 ```
 or
 ```shell
-npm install xxx
+npm install nomoney
 ```
 
 ## 使用
 
 ### import
 ```javascript
-import xxx form xxx
-
-xxx.stringify('123456')
+import nomoney form 'nomoney'
+nomoney.stringify('123456')
 ```
 ### for browser
 ```html
-<script src="xxx"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/nomoney@1.0.0/dist/nomoney.min.js"></script>
 ```
 ```javascript
-import xxx form xxx
+nomoney.stringify('123456')
+```
 
-xxx.stringify('123456')
+## scripts
+```shell
+npm run build // 打包
+npm run dev // 本地开发
+npm run test // 发布前测试
+npm run test:cover // 覆盖率测试
 ```
 
 ## Api
+### stringify
+大写格式化目标数字  
+
+``javascript
+nomoney.stringify(rmb: string | number, config : currencyStringifyConfig)
+``
+#### 参数
+##### rmb
+[required]你需要格式化的数字或字符串数字
+##### config
+格式化配置
+```
+{
+    lang: Language; //转换的目标语言，详细见属性
+    isCurrency: boolean; // 是否是货币，不是货币按照普通数字对待
+}
+```
+
+#### 返回值
+格式化后的大写数字
+
+### capital
+给出字符串或者数字，返回无格式的数字大写  
+
+```javascript
+nomoney.capital(rmb: string | number, config : currencyStringifyConfig)
+```
+#### 参数
+##### rmb
+[required]你需要格式化的数字或字符串数字
+##### config
+格式化配置
+```
+{
+    lang: Language; //转换的目标语言，详细见属性
+    isCurrency: boolean; // 是否是货币，不是货币按照普通数字对待
+}
+```
+#### 返回值
+格式化后无格式的数字大写
+
+### isValid
+```javascript
+nomoney.isValid(rmb: string | number)
+```
+#### 参数
+##### rmb
+[required]是否是合法数字
+#### 返回值
+布尔
+
+## 属性
+### Language
+目标格式语言
+
+```javascript
+enum Language {
+    zh_sc,  // 中文简体格式
+    zh_cn, // 繁体中文 [默认]
+    tw_cn, // 中国台湾格式
+    hk_cn, // 中国香港格式
+}
+```
 
 ## 单位
 
-## 注意事项
-
-
+### 支持单位
 ```text
-壹	贰	叁	肆	伍	陆	柒	捌
-玖	零	拾	佰	仟	万	亿	兆
-
-货币规律：单位，十单位，百单位，千单位
-
-个 = 0
-
-个，十，  百，  千，   
-万，十万，百万，千万，
-亿，十亿，百亿，千亿，
-兆，十兆，百兆，千兆，
+个
+十
+百
+千 
+万
+亿
+兆
 京, ... 10^16
 垓, ... 10^20
 杼, ... 10^24
@@ -69,18 +132,6 @@ xxx.stringify('123456')
 不可思议, ... 10^64
 无量, ... 10^68
 大数, ... 10^72
-
-数字规律：0000, 0000, 0000
-把数字拆分成四个一组的组别去分词
-
-解题思路：
-
-let input = 123456789
-1. 处理普通数字字符串反向分词，每四个词一组
-process(1) = [1, 2345, 6789]
-
-
-2. 对每一组根据下标处理
 ```
 
 

@@ -23,6 +23,7 @@ interface CNNumber {
     yuan: string;
     jiao: string;
     fen: string;
+    point: string;
 }
 
 // currencyBuild options 类型
@@ -37,16 +38,19 @@ interface currencyParseGroup {
 }
 
 enum Language {
+    zh_sc,
     zh_cn,
     tw_cn,
-    hk_cn
+    hk_cn,
 }
 
 interface currencyBaseConfig {
-    lang?: Language
+    lang?: Language; // 语言
 }
 
-interface currencyStringifyConfig extends currencyBaseConfig{}
+interface currencyStringifyConfig extends currencyBaseConfig{
+    isCurrency?: boolean; // 是否是货币, 不是货币的话不带货币单位
+}
 
 export {
     CurrencyUnitGroup,

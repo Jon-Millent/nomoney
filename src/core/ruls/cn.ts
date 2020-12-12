@@ -17,7 +17,8 @@ const baseBuild = function () : currencyBuildOptions {
             and: '零',
             yuan: '元',
             jiao: '角',
-            fen: '分'
+            fen: '分',
+            point: '点'
         },
         group: {
             unit: [
@@ -46,11 +47,37 @@ const zh_cn : currencyBuildOptions = baseBuild()
 const hk_cn : currencyBuildOptions = baseBuild()
 hk_cn.num.six = '陸'
 hk_cn.num.full = '正'
+hk_cn.num.point = '點'
 hk_cn.group.unit = unit
 
 const tw_cn : currencyBuildOptions = baseBuild()
 tw_cn.num.six = '陸'
+hk_cn.num.point = '點'
 tw_cn.group.unit = unit
+
+const zh_sc : currencyBuildOptions = baseBuild()
+zh_sc.num = {
+    one: '一',
+    two: '二',
+    three: '三',
+    four: '四',
+    five: '五',
+    six: '六',
+    seven: '七',
+    eight: '八',
+    nigh: '九',
+    zero: '零',
+    full: '整',
+    and: '零',
+    yuan: '元',
+    jiao: '角',
+    fen: '分',
+    point: '点'
+}
+zh_sc.group.base = [
+    '十', '百', '千'
+]
+
 
 export default function (lang?: Language) {
     switch (lang) {
@@ -60,6 +87,8 @@ export default function (lang?: Language) {
             return hk_cn
         case Language.tw_cn:
             return tw_cn
+        case Language.zh_sc:
+            return zh_sc
         default:
             return zh_cn
     }

@@ -40,4 +40,16 @@ describe("nomoney test", function() {
         expect(Currency.stringify('0000000000800000111')).toBe('捌亿零壹佰壹拾壹元整')
         expect(Currency.stringify('.01')).toBe('壹分')
     })
+
+    it("isCurrency = false", function() {
+        expect(Currency.stringify('3.1415926', {
+            isCurrency: false
+        })).toBe('叁点壹肆壹伍玖贰陆')
+        expect(Currency.stringify('0.01', {
+            isCurrency: false
+        })).toBe('零点零壹')
+        expect(Currency.stringify('0', {
+            isCurrency: false
+        })).toBe('零')
+    })
 });

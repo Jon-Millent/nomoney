@@ -16,6 +16,14 @@ class currencyBuild {
         return this.getIndex(index)
     }
 
+    public getBigNumberFormString(currency: string) : string {
+        let str = ''
+        for (let i=0; i<currency.length; i++) {
+            str += this.getIndex(currency[i])
+        }
+        return str
+    }
+
     public getIndex(index: string) : string {
         switch (index) {
             case '0':

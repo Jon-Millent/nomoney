@@ -1,4 +1,4 @@
-import { currencyParseGroup } from '../types/currency-types'
+import { currencyParseGroup, currencyStringifyConfig } from '../types/currency-types'
 import currencyBuild from "../tools/currencyBuild";
 
 class StringHelp {
@@ -143,6 +143,11 @@ class StringHelp {
     // 判断是否是 0 字符串
     public static getIsZeroString(currency: string) : boolean {
         return /^0+\.*0*$/.test(currency)
+    }
+
+    // 判断是否符合数字规则
+    public static isNumber(currency : string | number) : boolean {
+        return !Number.isNaN(currency)
     }
 }
 

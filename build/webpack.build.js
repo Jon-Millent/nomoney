@@ -18,7 +18,7 @@ module.exports = {
     extensions: [ '.ts' ],
   },
   output: {
-    filename: 'bundle.js',
+    filename: 'nomoney.min.js',
     path: path.resolve(dir, '../dist'),
     libraryTarget: 'umd',
     library: 'nomoney',
