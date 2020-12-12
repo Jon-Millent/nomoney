@@ -1,6 +1,17 @@
 <h1 align="center">
   nomoney
 </h1>
+
+<p align="center">
+    <a href="https://www.npmjs.com/package/nomoney">
+        <img src="https://img.shields.io/npm/v/nomoney?style=flat-square" alt="License">
+    </a>
+    <a href="https://github.com/Jon-Millent/nomoney/blob/master/LICENSE">
+        <img src="https://img.shields.io/github/license/jon-millent/nomoney?style=flat-square" alt="License">
+    </a>
+</p>
+
+
 <p align="center">
   人民币大写格式化，数字大写格式化，支持简体、繁体。最大支持`10^72`
 </p>
