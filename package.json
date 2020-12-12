@@ -1,10 +1,11 @@
 {
   "name": "nomoney",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "人民币大写格式化，数字大写格式化。",
-  "main": "dist/nomoney.min.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
-    "build": "webpack --config ./build/webpack.build.js --progress",
+    "build": "webpack --config ./build/webpack.build.js --progress & tsc --project tsconfig.json",
     "dev": "webpack serve --config ./build/webpack.dev.js",
     "test": "jest",
     "test:cover": "jest --coverage"

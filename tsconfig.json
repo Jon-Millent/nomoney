@@ -5,7 +5,7 @@
     "lib": ["es2015"],
     "strict": true,
     "declaration": true,
-    "outDir": "dist",
+    "outDir": "lib",
     "sourceMap": true
   },
   "include": ["src/**/*"],
