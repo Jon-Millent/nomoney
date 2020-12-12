@@ -6,6 +6,9 @@
     <a href="https://www.npmjs.com/package/nomoney">
         <img src="https://img.shields.io/npm/v/nomoney?style=flat-square" alt="License">
     </a>
+    <a href="https://travis-ci.org/github/Jon-Millent/nomoney">
+        <img src="https://img.shields.io/travis/Jon-Millent/nomoney?style=flat-square" alt="License">
+    </a>
     <a href="https://github.com/Jon-Millent/nomoney/blob/master/LICENSE">
         <img src="https://img.shields.io/github/license/jon-millent/nomoney?style=flat-square" alt="License">
     </a>
