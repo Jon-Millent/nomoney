@@ -1,3 +1,3 @@
-import Currency from './core/currency'
+import Currency from "./core/currency";
 
-export default Currency
+export default Currency;

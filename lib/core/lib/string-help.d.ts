@@ -1,4 +1,4 @@
-import { currencyParseGroup } from '../types/currency-types';
+import { currencyParseGroup } from "../types/currency-types";
 import currencyBuild from "../tools/currencyBuild";
 declare class StringHelp {
     static splitMoney(currency: string | number): currencyParseGroup;

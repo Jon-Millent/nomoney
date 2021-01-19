@@ -40,4 +40,4 @@ interface currencyBaseConfig {
 interface currencyStringifyConfig extends currencyBaseConfig {
     isCurrency?: boolean;
 }
-export { CurrencyUnitGroup, CNNumber, currencyBuildOptions, currencyParseGroup, Language, currencyStringifyConfig };
+export { CurrencyUnitGroup, CNNumber, currencyBuildOptions, currencyParseGroup, Language, currencyStringifyConfig, };
