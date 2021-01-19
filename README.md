@@ -18,9 +18,6 @@
 <p align="center">
   人民币大写格式化，数字大写格式化，支持简体、繁体。最大支持`10^72`
 </p>
-<p align="center">
-  <img src="https://i.loli.net/2020/12/09/uQfwjWkgKEJaNXr.png">  
-</p>
 
 ## Install
 ```shell
@@ -147,7 +144,3 @@ enum Language {
 无量, ... 10^68
 大数, ... 10^72
 ```
-
-
-#### logo 创意出处
-<img src="https://i.loli.net/2020/12/09/tPegUfmlBRbJxhD.png">  
