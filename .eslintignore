@@ -1,0 +1,14 @@
+.DS_Store
+node_modules/
+coverage/
+dist/
+temp/
+typings/
+build/
+/lib
+dev/
+test/
+jest.config.js
+webpack.config.js
+.eslintrc.js
+babel.config.js

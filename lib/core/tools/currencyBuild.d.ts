@@ -1,4 +1,4 @@
-import { CNNumber, currencyBuildOptions } from '../types/currency-types';
+import { CNNumber, currencyBuildOptions } from "../types/currency-types";
 declare class currencyBuild {
     private options;
     get num(): CNNumber;
