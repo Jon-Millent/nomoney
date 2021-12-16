@@ -27,7 +27,7 @@ class Currency {
     rmb: string | number,
     config: currencyStringifyConfig = {}
   ): string {
-    if (!rmb) {
+    if (!rmb && typeof rmb !== "number") {
       console.warn(
         "please pass in the correct parameters, support numbers or strings"
       );
