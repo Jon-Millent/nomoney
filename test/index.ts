@@ -4,6 +4,7 @@ import 'ts-jest'
 describe("nomoney test", function() {
     // 基础测试
     it("基础测试", function() {
+        expect(Currency.stringify(0)).toBe('零元整')
         expect(Currency.stringify('0')).toBe('零元整')
         expect(Currency.stringify('1')).toBe('壹元整')
         expect(Currency.stringify('2')).toBe('贰元整')
