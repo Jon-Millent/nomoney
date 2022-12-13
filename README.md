@@ -58,7 +58,7 @@ npm run test:cover // 覆盖率测试
 
 ``javascript
 nomoney.stringify(rmb: string | number, config : currencyStringifyConfig)
-``
+```
 #### 参数
 ##### rmb
 [required]你需要格式化的数字或字符串数字
