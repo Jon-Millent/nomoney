@@ -32,7 +32,7 @@ npm install nomoney
 
 ### import
 ```javascript
-import nomoney form 'nomoney'
+import nomoney from 'nomoney'
 nomoney.stringify('123456')
 ```
 ### for browser
