@@ -27,15 +27,19 @@ class Currency {
     rmb: string | number,
     config: currencyStringifyConfig = {}
   ): string {
-    if (!rmb && typeof rmb !== "number") {
-      console.warn(
-        "please pass in the correct parameters, support numbers or strings"
-      );
-      return "";
-    }
 
     const inputConfig = DefaultOptions.currencyStringifyConfig(config);
     const cnCurrency = new currencyBuild(cn(inputConfig.lang));
+
+    const yuan = cnCurrency.num.yuan;
+    const full = cnCurrency.num.full;
+
+    if (!rmb && typeof rmb !== "number") {
+      if (inputConfig.isCurrency) {
+        return cnCurrency.num.zero + yuan + full;
+      }
+      return cnCurrency.num.zero;
+    }
 
     if (rmb.toString().length > cnCurrency.getMaxLength()) {
       console.warn("maximum length is" + cnCurrency.getMaxLength().toString());
@@ -58,8 +62,6 @@ class Currency {
     const betterMoon = StringHelp.formatMoon(parseLine.intArea, cnCurrency);
 
     if (inputConfig.isCurrency) {
-      const yuan = cnCurrency.num.yuan;
-      const full = cnCurrency.num.full;
       if (parseLine.doubleArea) {
         const doubleBack = StringHelp.formatSun(
           parseLine.doubleArea,
@@ -67,10 +69,18 @@ class Currency {
           cnCurrency
         );
 
+        // 如果有小数
         if (doubleBack) {
-          return (betterMoon ? betterMoon + yuan : "") + doubleBack;
+          if (betterMoon) {
+            return (betterMoon ? betterMoon + yuan : "") + doubleBack;
+          }
+          return (betterMoon ? betterMoon + yuan : "") + doubleBack + full;
         } else {
-          return (betterMoon ? betterMoon + yuan : "") + full;
+          // 没有小数
+          if (betterMoon) {
+            return (betterMoon ? betterMoon + yuan : "") + full;
+          }
+          return cnCurrency.num.zero + yuan + full;
         }
       } else {
         return betterMoon ? betterMoon + yuan + full : "";

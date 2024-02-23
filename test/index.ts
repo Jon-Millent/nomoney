@@ -5,6 +5,9 @@ describe("nomoney test", function() {
     // 基础测试
     it("基础测试", function() {
         expect(Currency.stringify(0)).toBe('零元整')
+        expect(Currency.stringify('0.00001')).toBe('零元整')
+        expect(Currency.stringify('0.5')).toBe('伍角整')
+        expect(Currency.stringify('0.05')).toBe('伍分整')
         expect(Currency.stringify('0')).toBe('零元整')
         expect(Currency.stringify('1')).toBe('壹元整')
         expect(Currency.stringify('2')).toBe('贰元整')
@@ -36,10 +39,10 @@ describe("nomoney test", function() {
 
 
     it("非常规测试", function() {
-        expect(Currency.stringify('')).toBe('')
+        expect(Currency.stringify('')).toBe('零元整')
         expect(Currency.stringify('000000000000000000')).toBe('零元整')
         expect(Currency.stringify('0000000000800000111')).toBe('捌亿零壹佰壹拾壹元整')
-        expect(Currency.stringify('.01')).toBe('壹分')
+        expect(Currency.stringify('.01')).toBe('壹分整')
     })
 
     it("isCurrency = false", function() {
